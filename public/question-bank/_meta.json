@@ -1,0 +1,182 @@
+{
+"map":{
+  "anime" : "动画",
+  "game" : "游戏",
+  "commom" : "通识",
+  "community" : "圈子",
+  "other-carrier" : "其他媒介"
+  },
+"meta":[
+  {
+    "bank": "chinese-anime",
+    "bankName": "国漫",
+    "category": "anime",
+    "type": "objective",
+    "path": "objective/anime/chinese-anime.json"
+  },
+  {
+    "bank": "japanese-daily-anime",
+    "bankName": "日漫·日常",
+    "category": "anime",
+    "type": "objective",
+    "path": "objective/anime/japanese-daily-anime.json"
+  },
+  {
+    "bank": "japanese-inference-anime",
+    "bankName": "日漫·推理 ",
+    "category": "anime",
+    "type": "objective",
+    "path": "objective/anime/japanese-inference-anime.json"
+  },
+  {
+    "bank": "japanese-love-anime",
+    "bankName": "日漫·恋爱",
+    "category": "anime",
+    "type": "objective",
+    "path": "objective/anime/japanese-love-anime.json"
+  },
+  {
+    "bank": "japanese-realistic-anime",
+    "bankName": "日漫·热血",
+    "category": "anime",
+    "type": "objective",
+    "path": "objective/anime/japanese-realistic-anime.json"
+  },
+  {
+    "bank": "korean-anime",
+    "bankName": "韩漫",
+    "category": "anime",
+    "type": "objective",
+    "path": "objective/anime/korean-anime.json"
+  },
+  {
+    "bank": "us-anime",
+    "bankName": "美漫",
+    "category": "anime",
+    "type": "objective",
+    "path": "objective/anime/us-anime.json"
+  },
+  {
+    "bank": "common-culture",
+    "bankName": "通识文化",
+    "category": "commom",
+    "type": "objective",
+    "path": "objective/commom/common-culture.json",
+    "required": true
+  },
+  {
+    "bank": "common-slang",
+    "bankName": "通识黑话",
+    "category": "commom",
+    "type": "objective",
+    "path": "objective/commom/common-slang.json",
+    "required": true
+  },
+  {
+    "bank": "cosplay-community",
+    "bankName": "Cosplay",
+    "category": "community",
+    "type": "objective",
+    "path": "objective/community/cosplay-community.json"
+  },
+  {
+    "bank": "fanfiction-community",
+    "bankName": "同人文圈",
+    "category": "community",
+    "type": "objective",
+    "path": "objective/community/fanfiction-community.json"
+  },
+  {
+    "bank": "tokusatsu-community",
+    "bankName": "日本特摄剧",
+    "category": "community",
+    "type": "objective",
+    "path": "objective/community/tokusatsu-community.json"
+  },
+  {
+    "bank": "galgame",
+    "bankName": "Galgame",
+    "category": "other-carrier",
+    "type": "objective",
+    "path": "objective/other-carrier/galgame.json"
+  },
+  {
+    "bank": "light-novel",
+    "bankName": "轻小说",
+    "category": "other-carrier",
+    "type": "objective",
+    "path": "objective/other-carrier/light-novel.json"
+  },
+  {
+    "bank": "arknights",
+    "bankName": "明日方舟",
+    "category": "game",
+    "type": "objective",
+    "path": "objective/game/arknights.json"
+  },
+  {
+    "bank": "blue-archive",
+    "bankName": "蔚蓝档案",
+    "category": "game",
+    "type": "objective",
+    "path": "objective/game/blue-archive.json"
+  },
+  {
+    "bank": "genshin-impact",
+    "bankName": "原神",
+    "category": "game",
+    "type": "objective",
+    "path": "objective/game/genshin-impact.json"
+  },
+    {
+    "bank": "honkai-star-rail",
+    "bankName": "崩坏：星穹铁道",
+    "category": "game",
+    "type": "objective",
+    "path": "objective/game/honkai-star-rail.json"
+  },
+  {
+    "bank": "zenless-zone-zero",
+    "bankName": "绝区零",
+    "category": "game",
+    "type": "objective",
+    "path": "objective/game/zenless-zone-zero.json"
+  },
+  {
+    "bank": "common",
+    "bankName": "通用主观题",
+    "category": "common",
+    "type": "subjective",
+    "path": "subjective/commom/common.json",
+    "required": true
+  },
+  {
+    "bank": "art-drawing-department",
+    "bankName": "手绘部",
+    "category": "department-choice",
+    "type": "subjective",
+    "path": "subjective/department-choice/art-drawing-department.json"
+  },
+  {
+    "bank": "design-editing-department",
+    "bankName": "漫编部",
+    "category": "department-choice",
+    "type": "subjective",
+    "path": "subjective/department-choice/design-editing-department.json"
+  },
+  {
+    "bank": "performance-department",
+    "bankName": "才艺部",
+    "category": "department-choice",
+    "type": "subjective",
+    "path": "subjective/department-choice/performance-department.json"
+  },
+  {
+    "bank": "public-relations-department",
+    "bankName": "外交部",
+    "category": "department-choice",
+    "type": "subjective",
+    "path": "subjective/department-choice/public-relations-department.json"
+  }
+]
+}

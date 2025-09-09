@@ -1,0 +1,71 @@
+/*
+ * @file 全局样式文件
+ * @description 导入字体、Tailwind CSS，并定义全局字体设置、字体加载优化以及一些通用样式。
+ */
+
+/* 导入 Google Fonts 字体库 */
+/* 引入了 'Noto Sans'、'Chiron Sung HK' 和 'Host Grotesk' 三种字体，用于网页内容的显示。 */
+/* 'display=swap' 策略确保在字体加载过程中，文本依然可见，提升用户体验。 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Chiron+Sung+HK&family=Host+Grotesk&display=swap');
+
+/* 导入 Tailwind CSS 框架的入口文件 */
+@import "tailwindcss";
+
+
+/* 全局字体设置 */
+/* 为所有元素设置默认字体栈。优先使用 'Chiron Sung HK' 和 'Noto Sans'，
+   如果这些字体不可用，则依次尝试系统默认字体。 */
+* {
+  font-family: 'Chiron Sung HK', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Body 元素的字体设置 */
+/* 为 body 元素设置字体，并进行字体渲染优化，使文本显示更清晰、平滑。 */
+body {
+  font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  /* 字体渲染优化：抗锯齿处理，使字体边缘更平滑。 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* 文本渲染优化：提高文本的可读性和清晰度。 */
+  text-rendering: optimizeLegibility;
+  /* 字体特性设置：启用字距调整，改善字符间距。 */
+  font-feature-settings: 'kern' 1;
+}
+
+/* 字体加载优化 */
+/* 定义自定义字体 'Chiron Sung HK' 和 'Noto Sans' 的加载行为。 */
+@font-face {
+  font-family: 'Chiron Sung HK','Noto Sans';
+  /* 'font-display: swap' 策略：在自定义字体加载完成前，先使用系统默认字体显示文本，
+     加载完成后再切换到自定义字体，避免文本不可见的“闪烁”现象。 */
+  font-display: swap;
+}
+
+
+/* 全局通用样式定义 */
+
+/* 章节标题样式 */
+/* 定义了标题的字体大小、字重、下边距和颜色，使其在视觉上更突出。 */
+.section-title {
+  font-size: 1.25rem; /* 对应 Tailwind CSS 的 text-xl，字体大小为 20px */
+  font-weight: 600; /* 对应 Tailwind CSS 的 font-semibold，字重为 600 */
+  margin-bottom: 0.5rem; /* 对应 Tailwind CSS 的 mb-2，下边距为 8px */
+  color: #333; /* 深灰色文本，用于标题 */
+}
+
+/* 章节提示文本样式 */
+/* 定义了提示文本的字体大小、颜色和下边距，使其作为辅助信息显示。 */
+.section-hint {
+  font-size: 0.875rem; /* 对应 Tailwind CSS 的 text-sm，字体大小为 14px */
+  color: #666; /* 浅灰色文本，用于提示信息 */
+  margin-bottom: 1rem; /* 对应 Tailwind CSS 的 mb-4，下边距为 16px */
+}
+
+/* 媒体查询：针对最大宽度为 768px 的设备（通常是移动设备） */
+/* 确保在移动设备上，调查核心区域底部有足够的内边距，防止内容被底部导航或其他元素遮挡。 */
+@media (max-width: 768px) {
+  .survey-core {
+    padding-bottom: 60px; /* 为移动设备底部增加 60px 的内边距 */
+  }
+}
+

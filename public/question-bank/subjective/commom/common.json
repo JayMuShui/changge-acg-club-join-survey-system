@@ -1,0 +1,21 @@
+{
+    "bank": "common",
+    "bank-name": "通用主观题",
+    "bank-qa": [
+        {
+            "id": 1,
+            "type": "subjective",
+            "question": "说出你喜欢的一部动漫，并简单说说你喜欢它的什么地方。"
+        },
+        {
+            "id": 2,
+            "type": "subjective",
+            "question": "说出你一些喜欢的动漫角色，并简单说说你喜欢ta的什么地方。"
+        },
+        {
+            "id": 3,
+            "type": "subjective",
+            "question": "说出你比较喜欢的二游，并简单说说你喜欢它的什么地方。"
+        }
+    ]
+}

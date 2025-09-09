@@ -1,0 +1,31 @@
+{
+    "bank": "art-drawing-department",
+    "bank-name": "手绘部",
+    "bank-qa": [
+        {
+            "id": 1,
+            "type": "subjective",
+            "question": "喜欢板绘还是纸绘？"
+        },
+        {
+            "id": 2,
+            "type": "subjective",
+            "question": "喜欢用什么软件/绘画工具画画？"
+        },
+        {
+            "id": 3,
+            "type": "subjective",
+            "question": "纯摸鱼时会画些什么？"
+        },
+        {
+            "id": 4,
+            "type": "subjective",
+            "question": "即使画技不好也会爱发电吗？"
+        },
+        {
+            "id": 5,
+            "type": "subjective",
+            "question": "画画一般是临摹还是原创？"
+        }
+    ]
+}

@@ -1,0 +1,606 @@
+﻿{
+    "bank": "galgame",
+    "bank-name": "GALGAME",
+    "bank-qa": [
+        {
+            "id": 1,
+            "type": "objective",
+            "question": "以下哪部作品被称为“GALGAME三大奇迹”之一？",
+            "options": [
+                "《CLANNAD》",
+                "《Fate/stay night》",
+                "《School Days》",
+                "《寒蝉鸣泣之时》"
+            ],
+            "answer": "《CLANNAD》"
+        },
+        {
+            "id": 2,
+            "type": "objective",
+            "question": "Key社的“春夏秋冬”系列中，代表“春”的作品是？",
+            "options": [
+                "《Clannad》",
+                "《Air》",
+                "《Kanon》",
+                "《Little Busters!》"
+            ],
+            "answer": "《Air》"
+        },
+        {
+            "id": 3,
+            "type": "objective",
+            "question": "《Fate/stay night》中，Saber的真实身份是？",
+            "options": [
+                "亚瑟王",
+                "亚历山大大帝",
+                "吉尔伽美什",
+                "圣女贞德"
+            ],
+            "answer": "亚瑟王"
+        },
+        {
+            "id": 4,
+            "type": "objective",
+            "question": "以下哪部作品的结局因“著名场景”被玩家调侃为“血池地狱”？",
+            "options": [
+                "《EF - the first tale》",
+                "《School Days》",
+                "《Rewrite》",
+                "《白色相簿2》"
+            ],
+            "answer": "《School Days》"
+        },
+        {
+            "id": 5,
+            "type": "objective",
+            "question": "柚子社的作品通常以什么风格著称？",
+            "options": [
+                "暗黑致郁",
+                "轻松萌系",
+                "硬核推理",
+                "历史正剧"
+            ],
+            "answer": "轻松萌系"
+        },
+        {
+            "id": 6,
+            "type": "objective",
+            "question": "《寒蝉鸣泣之时》的核心元素不包括？",
+            "options": [
+                "轮回",
+                "悬疑",
+                "恋爱喜剧",
+                "解谜"
+            ],
+            "answer": "恋爱喜剧"
+        },
+        {
+            "id": 7,
+            "type": "objective",
+            "question": "《Muv-Luv Alternative》的故事背景主要涉及？",
+            "options": [
+                "校园日常",
+                "外星生物入侵",
+                "魔法战斗",
+                "时空穿越"
+            ],
+            "answer": "外星生物入侵"
+        },
+        {
+            "id": 8,
+            "type": "objective",
+            "question": "以下哪位角色出自《月姬》？",
+            "options": [
+                "两仪式",
+                "爱尔奎特·布伦史塔德",
+                "远坂凛",
+                "宫泽有纪宁"
+            ],
+            "answer": "爱尔奎特·布伦史塔德"
+        },
+        {
+            "id": 9,
+            "type": "objective",
+            "question": "型月世界观中，“魔术”与“魔法”的主要区别是？",
+            "options": [
+                "力量强度",
+                "是否能实现“不可能之事”",
+                "学习难度",
+                "传承方式"
+            ],
+            "answer": "是否能实现“不可能之事”"
+        },
+        {
+            "id": 10,
+            "type": "objective",
+            "question": "《白色相簿2》中，“冬马和纱”的主要身份是？",
+            "options": [
+                "画家",
+                "钢琴家",
+                "小说家",
+                "运动员"
+            ],
+            "answer": "钢琴家"
+        },
+        {
+            "id": 11,
+            "type": "objective",
+            "question": "以下哪部作品不属于“美少女游戏大赏”（萌系游戏大赏）年度金奖作品？",
+            "options": [
+                "《千恋*万花》",
+                "《近月少女的礼仪》",
+                "《神之狂想曲》",
+                "《魔女的夜宴》"
+            ],
+            "answer": "《神之狂想曲》"
+        },
+        {
+            "id": 12,
+            "type": "objective",
+            "question": "《Clannad》中，“团子大家族”的象征意义与哪个元素关联最紧密？",
+            "options": [
+                "友情",
+                "家族",
+                "爱情",
+                "梦想"
+            ],
+            "answer": "家族"
+        },
+        {
+            "id": 13,
+            "type": "objective",
+            "question": "《Rewrite》的制作公司是？",
+            "options": [
+                "Key社",
+                "柚子社",
+                "型月",
+                "Leaf社"
+            ],
+            "answer": "Key社"
+        },
+        {
+            "id": 14,
+            "type": "objective",
+            "question": "以下哪部作品的故事发生在“六十层的学园都市”？",
+            "options": [
+                "《创之轨迹》",
+                "《Ever17》",
+                "《命运石之门》",
+                "《Steins;Gate》"
+            ],
+            "answer": "《Ever17》"
+        },
+        {
+            "id": 15,
+            "type": "objective",
+            "question": "《Ever17》的核心诡计与什么元素相关？",
+            "options": [
+                "时间循环",
+                "身份互换",
+                "空间错位",
+                "性别认知"
+            ],
+            "answer": "身份互换"
+        },
+        {
+            "id": 16,
+            "type": "objective",
+            "question": "《兰斯》系列的主角兰斯最显著的性格特点是？",
+            "options": [
+                "温柔体贴",
+                "好色且霸道",
+                "沉默寡言",
+                "腹黑狡诈"
+            ],
+            "answer": "好色且霸道"
+        },
+        {
+            "id": 17,
+            "type": "objective",
+            "question": "《近月少女的礼仪》中，主角“小仓朝日”的真实性别是？",
+            "options": [
+                "女性",
+                "男性",
+                "双性",
+                "无性别"
+            ],
+            "answer": "男性"
+        },
+        {
+            "id": 18,
+            "type": "objective",
+            "question": "以下哪部作品属于“悬疑推理”类GALGAME？",
+            "options": [
+                "《公主恋人》",
+                "《壳之少女》",
+                "《约会大作战》",
+                "《妹控哥哥与双胞胎妹妹》"
+            ],
+            "answer": "《壳之少女》"
+        },
+        {
+            "id": 19,
+            "type": "objective",
+            "question": "《Fate/Zero》是《Fate/stay night》的？",
+            "options": [
+                "续集",
+                "前传",
+                "平行世界",
+                "同人作品"
+            ],
+            "answer": "前传"
+        },
+        {
+            "id": 20,
+            "type": "objective",
+            "question": "Key社作品中，常出现的“神隐”概念与哪部作品关联最深？",
+            "options": [
+                "《Air》",
+                "《Kanon》",
+                "《Charlotte》",
+                "《Angel Beats!》"
+            ],
+            "answer": "《Air》"
+        },
+        {
+            "id": 21,
+            "type": "objective",
+            "question": "《School Days》中，男主角“伊藤诚”的结局通常与什么相关？",
+            "options": [
+                "幸福结婚",
+                "学业成功",
+                "被杀害",
+                "远走他乡"
+            ],
+            "answer": "被杀害"
+        },
+        {
+            "id": 22,
+            "type": "objective",
+            "question": "以下哪部作品不是“柚子社”制作的？",
+            "options": [
+                "《魔女的夜宴》",
+                "《千恋*万花》",
+                "《月影魅像 -解放之羽-》",
+                "《星光咖啡馆与死神之蝶》"
+            ],
+            "answer": "《月影魅像 -解放之羽-》"
+        },
+        {
+            "id": 23,
+            "type": "objective",
+            "question": "《月姬》中，“真祖”与“死徒”的关系是？",
+            "options": [
+                "盟友",
+                "敌对",
+                "师徒",
+                "亲属"
+            ],
+            "answer": "敌对"
+        },
+        {
+            "id": 24,
+            "type": "objective",
+            "question": "《白色相簿2》的故事主要发生在哪个季节？",
+            "options": [
+                "春季",
+                "夏季",
+                "秋季",
+                "冬季"
+            ],
+            "answer": "冬季"
+        },
+        {
+            "id": 25,
+            "type": "objective",
+            "question": "《Muv-Luv》系列中，“BETA”指的是？",
+            "options": [
+                "人类军队",
+                "外星侵略者",
+                "超级武器",
+                "神秘组织"
+            ],
+            "answer": "外星侵略者"
+        },
+        {
+            "id": 26,
+            "type": "objective",
+            "question": "以下哪部作品以“音乐”为核心线索？",
+            "options": [
+                "《Rewrite》",
+                "《EF - a tale of memories》",
+                "《战国兰斯》",
+                "《euphoria》"
+            ],
+            "answer": "《EF - a tale of memories》"
+        },
+        {
+            "id": 27,
+            "type": "objective",
+            "question": "Key社作品中，“Angel Beats!”的故事发生在？",
+            "options": [
+                "高中校园",
+                "死后世界",
+                "魔法学院",
+                "未来都市"
+            ],
+            "answer": "死后世界"
+        },
+        {
+            "id": 28,
+            "type": "objective",
+            "question": "《Fate/stay night》中，“卫宫士郎”的理想是？",
+            "options": [
+                "成为正义的伙伴",
+                "保护远坂凛",
+                "赢得圣杯战争",
+                "复活亲人"
+            ],
+            "answer": "成为正义的伙伴"
+        },
+        {
+            "id": 29,
+            "type": "objective",
+            "question": "以下哪部作品不属于“视觉小说”（Visual Novel）类型？",
+            "options": [
+                "《CLANNAD》",
+                "《街霸》",
+                "《Steins;Gate》",
+                "《寒蝉鸣泣之时》"
+            ],
+            "answer": "《街霸》"
+        },
+        {
+            "id": 30,
+            "type": "objective",
+            "question": "《壳之少女》的画师是？",
+            "options": [
+                "樋上至",
+                "铃平广",
+                "中村毅",
+                "原田雄一"
+            ],
+            "answer": "中村毅"
+        },
+        {
+            "id": 31,
+            "type": "objective",
+            "question": "《兰斯9》的副标题是？",
+            "options": [
+                "赫尔曼革命",
+                "女王的勇士",
+                "孤独的少女",
+                "不死者之王"
+            ],
+            "answer": "赫尔曼革命"
+        },
+        {
+            "id": 32,
+            "type": "objective",
+            "question": "《近月少女的礼仪》中，主角进入“樱公馆”的目的是？",
+            "options": [
+                "复仇",
+                "学习服装设计",
+                "寻找亲人",
+                "躲避追杀"
+            ],
+            "answer": "学习服装设计"
+        },
+        {
+            "id": 33,
+            "type": "objective",
+            "question": "以下哪部作品的女主角之一是“金发双马尾”？",
+            "options": [
+                "《Air》中的神尾观铃",
+                "《Kanon》中的月宫亚由",
+                "《Little Busters!》中的枣铃",
+                "《Fate/stay night》中的远坂凛"
+            ],
+            "answer": "《Fate/stay night》中的远坂凛"
+        },
+        {
+            "id": 34,
+            "type": "objective",
+            "question": "《寒蝉鸣泣之时》中，“雏见泽症候群”的主要症状是？",
+            "options": [
+                "失忆",
+                "狂暴化",
+                "嗜睡",
+                "体温过低"
+            ],
+            "answer": "狂暴化"
+        },
+        {
+            "id": 35,
+            "type": "objective",
+            "question": "《Rewrite》中，“守护者”组织的目的是？",
+            "options": [
+                "保护地球生态",
+                "消灭所有超能力者",
+                "实现人类进化",
+                "寻找失落的文明"
+            ],
+            "answer": "保护地球生态"
+        },
+        {
+            "id": 36,
+            "type": "objective",
+            "question": "以下哪部作品不是“型月”（TYPE-MOON）制作的？",
+            "options": [
+                "《月姬》",
+                "《Fate/stay night》",
+                "《魔法使之夜》",
+                "《Rewrite》"
+            ],
+            "answer": "《Rewrite》"
+        },
+        {
+            "id": 37,
+            "type": "objective",
+            "question": "《白色相簿2》中，“雪菜”与“和纱”的关系是？",
+            "options": [
+                "姐妹",
+                "情敌",
+                "师生",
+                "同事"
+            ],
+            "answer": "情敌"
+        },
+        {
+            "id": 38,
+            "type": "objective",
+            "question": "《Ever17》中，“可可”的真实身份与什么有关？",
+            "options": [
+                "时间旅行者",
+                "人工智能",
+                "外星人",
+                "克隆人"
+            ],
+            "answer": "时间旅行者"
+        },
+        {
+            "id": 39,
+            "type": "objective",
+            "question": "柚子社作品的角色设计通常由哪位画师主导？",
+            "options": [
+                "武内崇",
+                "こぶいち",
+                "樋上至",
+                "铃平广"
+            ],
+            "answer": "こぶいち"
+        },
+        {
+            "id": 40,
+            "type": "objective",
+            "question": "《Clannad After Story》中，“冈崎汐”是主角与谁的女儿？",
+            "options": [
+                "古河渚",
+                "藤林杏",
+                "一之濑琴美",
+                "坂上智代"
+            ],
+            "answer": "古河渚"
+        },
+        {
+            "id": 41,
+            "type": "objective",
+            "question": "《Fate/stay night》UBW线的核心冲突是？",
+            "options": [
+                "士郎与 Archer 的理念对立",
+                "士郎与 Saber 的爱情",
+                "圣杯的真相揭露",
+                "远坂凛的家族秘密"
+            ],
+            "answer": "士郎与 Archer 的理念对立"
+        },
+        {
+            "id": 42,
+            "type": "objective",
+            "question": "以下哪部作品以“轮回救赎”为核心主题？",
+            "options": [
+                "《School Days》",
+                "《寒蝉鸣泣之时》",
+                "《公主恋人》",
+                "《兰斯10》"
+            ],
+            "answer": "《寒蝉鸣泣之时》"
+        },
+        {
+            "id": 43,
+            "type": "objective",
+            "question": "《Muv-Luv Alternative》中，“樱花作战”的目的是？",
+            "options": [
+                "消灭BETA的大本营",
+                "保护日本列岛",
+                "研发新武器",
+                "转移人类幸存者"
+            ],
+            "answer": "消灭BETA的大本营"
+        },
+        {
+            "id": 44,
+            "type": "objective",
+            "question": "以下哪部作品不属于“泣系”GALGAME（以催泪著称）？",
+            "options": [
+                "《Air》",
+                "《Kanon》",
+                "《柚子系列》",
+                "《Clannad》"
+            ],
+            "answer": "《柚子系列》"
+        },
+        {
+            "id": 45,
+            "type": "objective",
+            "question": "《月姬》中，“爱尔奎特”的种族是？",
+            "options": [
+                "人类",
+                "真祖",
+                "死徒",
+                "魔术师"
+            ],
+            "answer": "真祖"
+        },
+        {
+            "id": 46,
+            "type": "objective",
+            "question": "《EF - the latter tale》的故事主要围绕哪对角色展开？",
+            "options": [
+                "雨宫优子 & 火村夕",
+                "宫村宫子 & 堤京介",
+                "新藤景 & 广野纮",
+                "羽山瑞希 & 麻生莲治"
+            ],
+            "answer": "雨宫优子 & 火村夕"
+        },
+        {
+            "id": 47,
+            "type": "objective",
+            "question": "《Steins;Gate》中，“命运石之门”指的是？",
+            "options": [
+                "一个组织",
+                "一种时间机器",
+                "最优世界线",
+                "一个地点"
+            ],
+            "answer": "最优世界线"
+        },
+        {
+            "id": 48,
+            "type": "objective",
+            "question": "以下哪部作品的主角是“妹控”？",
+            "options": [
+                "《缘之空》",
+                "《CLANNAD》",
+                "《Fate/stay night》",
+                "《Rewrite》"
+            ],
+            "answer": "《缘之空》"
+        },
+        {
+            "id": 49,
+            "type": "objective",
+            "question": "《壳之少女》的故事背景设定在哪个年代？",
+            "options": [
+                "昭和时期",
+                "平成时期",
+                "令和时期",
+                "明治时期"
+            ],
+            "answer": "昭和时期"
+        },
+        {
+            "id": 50,
+            "type": "objective",
+            "question": "Key社的创始人是？",
+            "options": [
+                "奈须蘑菇",
+                "麻枝准",
+                "龙骑士07",
+                "田中罗密欧"
+            ],
+            "answer": "麻枝准"
+        }
+    ]
+}

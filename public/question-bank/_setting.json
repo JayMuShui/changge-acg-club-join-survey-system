@@ -1,0 +1,7 @@
+{
+        "objective": 50,
+        "subjective": 0,
+        "department-preferred-choice": 0,
+        "department-adjustment-choice": 3,
+        "tip": "如果打算限制题数，这里配置的题目数不要少于_meta.json里面主观/客观题的题库总数，否则当用户尝试勾选多于总题数的题库后会有题库分配的count=0，触发0即为抽取所有的题目的逻辑"
+}
