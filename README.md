@@ -57,7 +57,7 @@ src/                # 源代码目录
 
 ### public配置目录重要文件格式要求
 
-1.  **加密文件** (`/public/.password/`):
+1.  **加密文件** (`/public/_password/`):
     -   `after-encrypt.json`: 存储加密后的调查问卷内容和审核账号密码，JSON格式。
         ```json
         {

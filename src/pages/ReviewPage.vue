@@ -56,12 +56,12 @@ const encryptionKey = ref('');
 onMounted(async () => {
   try {
     const [passwordResponse, keyResponse] = await Promise.all([
-      fetch('/.password/after-encrypt.json'),
-      fetch('/.password/key.json')
+      fetch('/_password/after-encrypt.json'),
+      fetch('/_password/key.json')
     ]);
     const passwordData = await passwordResponse.json();
     const keyData = await keyResponse.json();
-    reviewPassword.value = passwordData.review.password;
+    reviewPassword.value = passwordData.review_password;
     reviewAccount.value = passwordData.review.account;
     encryptionKey.value = keyData.key;
   } catch (error) {

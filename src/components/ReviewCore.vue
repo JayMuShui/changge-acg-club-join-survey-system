@@ -325,7 +325,7 @@ const qqAvatarUrl = computed(() => {
 // 组件挂载后执行的生命周期钩子函数：加载解密密钥
 onMounted(async () => {
   try {
-    const response = await fetch('/.password/key.json');
+    const response = await fetch('/_password/key.json');
     const data = await response.json();
     decryptionKey.value = data.key;
   } catch (error) {

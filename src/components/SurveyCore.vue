@@ -196,7 +196,10 @@
         </ul>
       </div>
 
-      <button @click="nextStep" class="btn">确认并进入下一步</button>
+      <button @click="nextStep" class="btn" :disabled="isLoading">
+        <span v-if="isLoading" style="color: green;">{{ loadingText }}</span>
+        <span v-else>确认并进入下一步</span>
+      </button>
       <button @click="prevStep" class="btn">返回修改</button>
     </div>
 
@@ -475,6 +478,8 @@ const objectiveQuestionsScore = ref(0)
 const showLearnMoreButton = ref(false)
 const showWrongQuestions = ref(false)
 const encryptionKey = ref("")
+const isLoading = ref(false)
+const loadingText = ref("正在加载题目.")
 
 // 新增 QQ 和电话
 const qqNumber = ref("")
@@ -612,7 +617,7 @@ const goToSubjectiveQuestion = (index: number) => {
 
 const loadEncryptionKey = async () => {
   try {
-    const response = await fetch("/.password/key.json")
+    const response = await fetch("/_password/key.json")
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`)
     const data = await response.json()
     encryptionKey.value = data.key
@@ -762,42 +767,50 @@ const nextStep = async () => {
 
       currentStep.value = 3
     } else if (currentStep.value === 3) {
-      // 步骤3：信息确认后的处理逻辑
-      // 用户已确认基础信息和题库选择。此步骤将根据用户选择的题库，生成具体的客观题和主观题。
-      // surveyData.value 中已包含基础信息和已选择的题库信息。
-      const selectedBankInfo: { bank: string; count: number; type: string; choice?: string }[] = [];
-      for (const bank of selectedBanks.value) {
-        let questions: any[] = [];
-        if (bank.type === 'objective') {
-          if (bank.count === 0) {
-            questions = await getAllQuestionsInBank(bank.bank);
-          } else {
-            questions = await drawRandomQuestions([bank.bank], bank.count);
-          }
-          objectiveQuestions.value.push(...questions.map((q: any) => ({ ...q, bank: bank.bank, bankName: bank.bankName })));
-          // 修复：初始化 objectiveAnswers，每题独立对象
-          objectiveAnswers.value = objectiveQuestions.value.map(q => ({ id: q.id, bank: q.bank, selectedOption: null, correct: false }));
-        } else if (bank.type === 'subjective') {
-          if (bank.count === 0) {
-            questions = await getAllQuestionsInBank(bank.bank);
-          } else {
-            questions = await drawRandomQuestions([bank.bank], bank.count);
-          }
-          subjectiveQuestions.value.push(...questions.map((q: any) => ({ ...q, bank: bank.bank, bankName: bank.bankName })));
-          subjectiveAnswers.value = subjectiveQuestions.value.map(q => ({ id: q.id, bank: q.bank, text: '' }));
+      isLoading.value = true;
+      let dotCount = 0;
+      const loadingInterval = setInterval(() => {
+        dotCount = (dotCount + 1) % 4;
+        loadingText.value = "正在加载题目" + ".".repeat(dotCount);
+      }, 500);
 
+      try {
+        // 步骤3：信息确认后的处理逻辑
+        // 用户已确认基础信息和题库选择。此步骤将根据用户选择的题库，生成具体的客观题和主观题。
+        // surveyData.value 中已包含基础信息和已选择的题库信息。
+        const selectedBankInfo: { bank: string; count: number; type: string; choice?: string }[] = [];
+        for (const bank of selectedBanks.value) {
+          let questions: any[] = [];
+          if (bank.type === 'objective') {
+            if (bank.count === 0) {
+              questions = await getAllQuestionsInBank(bank.bank);
+            } else {
+              questions = await drawRandomQuestions([bank.bank], bank.count);
+            }
+            objectiveQuestions.value.push(...questions.map((q: any) => ({ ...q, bank: bank.bank, bankName: bank.bankName })));
+            // 修复：初始化 objectiveAnswers，每题独立对象
+            objectiveAnswers.value = objectiveQuestions.value.map(q => ({ id: q.id, bank: q.bank, selectedOption: null, correct: false }));
+          } else if (bank.type === 'subjective') {
+            if (bank.count === 0) {
+              questions = await getAllQuestionsInBank(bank.bank);
+            } else {
+              questions = await drawRandomQuestions([bank.bank], bank.count);
+            }
+            subjectiveQuestions.value.push(...questions.map((q: any) => ({ ...q, bank: bank.bank, bankName: bank.bankName })));
+            subjectiveAnswers.value = subjectiveQuestions.value.map(q => ({ id: q.id, bank: q.bank, text: '' }));
+
+          }
+          selectedBankInfo.push({
+            bank: bank.bank,
+            type: bank.type,
+            count: bank.count,
+            ...(bank.choice && { choice: bank.choice }),
+          });
         }
-        selectedBankInfo.push({
-          bank: bank.bank,
-          type: bank.type,
-          count: bank.count,
-          ...(bank.choice && { choice: bank.choice }),
-        });
-      }
 
-      for (let i = objectiveQuestions.value.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [objectiveQuestions.value[i], objectiveQuestions.value[j]] = [objectiveQuestions.value[j], objectiveQuestions.value[i]];
+        for (let i = objectiveQuestions.value.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [objectiveQuestions.value[i], objectiveQuestions.value[j]] = [objectiveQuestions.value[j], objectiveQuestions.value[i]];
         [objectiveAnswers.value[i], objectiveAnswers.value[j]] = [objectiveAnswers.value[j], objectiveAnswers.value[i]]; // 同步打乱 objectiveAnswers
       }
       for (let i = subjectiveQuestions.value.length - 1; i > 0; i--) {
@@ -807,6 +820,10 @@ const nextStep = async () => {
 
       surveyData.value.selectedBanks = selectedBankInfo;
       currentStep.value = 4; // 进入客观题答题界面
+    } finally {
+      clearInterval(loadingInterval);
+      isLoading.value = false;
+    }
     } else if (currentStep.value === 4) {
       // 步骤4: 客观题答题界面逻辑
       // 检查所有客观题是否已作答

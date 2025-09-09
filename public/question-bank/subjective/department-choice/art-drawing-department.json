@@ -5,27 +5,27 @@
         {
             "id": 1,
             "type": "subjective",
-            "question": "喜欢板绘还是纸绘？"
+            "question": "你更喜欢板绘还是纸绘？为什么？"
         },
         {
             "id": 2,
             "type": "subjective",
-            "question": "喜欢用什么软件/绘画工具画画？"
+            "question": "平时主要使用哪些绘画软件或传统工具？"
         },
         {
             "id": 3,
             "type": "subjective",
-            "question": "纯摸鱼时会画些什么？"
+            "question": "闲暇时，你通常会画些什么内容？"
         },
         {
             "id": 4,
             "type": "subjective",
-            "question": "即使画技不好也会爱发电吗？"
+            "question": "即使画技不够完美，你还会积极创作吗？"
         },
         {
             "id": 5,
             "type": "subjective",
-            "question": "画画一般是临摹还是原创？"
+            "question": "平时画画时更偏向临摹还是原创作品？"
         }
     ]
 }
