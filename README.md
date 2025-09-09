@@ -12,7 +12,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-4EC5F1?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org) [![PostCSS](https://img.shields.io/badge/PostCSS-DD3A0A?style=for-the-badge&logo=postcss&logoColor=white)](https://postcss.org) [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-blue?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![Vue3](https://img.shields.io/badge/Vue3-00796b?style=for-the-badge&logo=vuedotjs)](https://vuejs.org) [![Vite](https://img.shields.io/badge/Vite-20272F?style=for-the-badge&logo=vite)](https://vitejs.dev) 
 [![PKG-Crypto.JS](https://img.shields.io/badge/PKG-Crypto.JS-00E676?style=for-the-badge)](https://github.com/brix/crypto-js)[![PKG-GSAP](https://img.shields.io/badge/PKG-GSAP-FF69B4?style=for-the-badge)](https://github.com/greensock/GSAP) 
-[![ACG_image-t.alcy.cc](https://img.shields.io/badge/ACG_image-t.alcy.cc-pink?style=for-the-badge)](https://t.alcy.cc) 
+[![ACG_image-t.alcy.cc](https://img.shields.io/badge/ACG_image-t.alcy.cc-pink?style=for-the-badge)](https://t.alcy.cc)
 
 
 
@@ -21,6 +21,7 @@
 本项目主要包含以下目录和文件：
 
 ```
+
 src/                # 源代码目录
 ├── App.vue         # Vue根组件
 ├── main.ts         # 应用入口文件，Vue应用初始化
@@ -241,6 +242,9 @@ src/                # 源代码目录
 
 通过上述改进，可以显著提升项目的可维护性、可扩展性和开发效率。
 
+## 在线使用
+
+[![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://changge.netlify.app/)[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://changge.vercel.app/)[![Cloudflare Pages](https://img.shields.io/badge/Cloudflare_Pages-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)](https://changge.pages.dev/)[![腾讯云EdgeOne](https://img.shields.io/badge/TencentCloud-EdgeOne-0052D9?style=for-the-badge&logo=tencent-cloud&logoColor=white)](https://changge.edgeone.app/)(EdgeOne平台未开启中国大陆IP访问)
 
 
 
