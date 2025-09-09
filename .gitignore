@@ -1,6 +1,5 @@
 # Node.js 依赖
 node_modules/
-pnpm-lock.yaml
 pnpm-workspace.yaml
 
 # 运行/构建产物
