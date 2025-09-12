@@ -19,21 +19,29 @@
         </div>
         <div class="class-input-group">
           <label for="gradeNum">班别：</label>
-          <input
-            type="text"
-            id="gradeNum"
-            v-model="gradeNum"
-            readonly
-            @click="() => displayInfo('嘻嘻，已经帮你填好啦，新人 (・ω・)')"
-          />
+          <div class="grade-input-wrapper">
+            <span>20</span>
+            <input
+              type="text"
+              id="gradeNum"
+              v-model="gradeNum"
+              placeholder="XX"
+              maxlength="2"
+              min="00"
+              max="25"
+            />
           <label for="classNum">级</label>
           <input
             type="text"
             id="classNum"
             v-model="classNum"
-            placeholder="01-25"
+            placeholder="XX"
+            maxlength="2"
+            min="1"
+            max="99"
           />
           <label>班</label>
+            </div>
         </div>
         <div class="gender-selection">
           <label>性别：</label>
@@ -98,6 +106,9 @@
             />
             <label :for="bank.bank" class="block p-3 border rounded-lg cursor-pointer transition-colors peer-checked:border-blue-500 peer-checked:bg-blue-50 hover:bg-gray-50">
               <div class="font-medium">{{ bank.bankName || bank.bank }}</div>
+              <div v-if="showBankResponsibleInfo && bank.lastEditPerson" class="text-xs text-gray-500 mt-1">
+                ({{ bank.lastEditPerson }} - {{ bank.lastEditTime }})
+              </div>
             </label>
           </div>
         </div>
@@ -118,8 +129,11 @@
               class="hidden peer"
               :checked="userSelectedBanks.some(b => b.bank === bank.bank && b.choice === 'adjustment')"
             />
-            <label :for="'adjustment-' + bank.bank" class="block p-3 border rounded-lg cursor-pointer transition-colors peer-checked:border-purple-500 peer-checked:bg-purple-50 hover:bg-gray-50">
+            <label :for="'adj-' + bank.bank" class="block p-3 border rounded-lg cursor-pointer transition-colors peer-checked:border-blue-500 peer-checked:bg-blue-50 hover:bg-gray-50">
               <div class="font-medium">{{ bank.bankName || bank.bank }}</div>
+              <div v-if="showBankResponsibleInfo && bank.lastEditPerson" class="text-xs text-gray-500 mt-1">
+                ({{ bank.lastEditPerson }} - {{ bank.lastEditTime }})
+              </div>
             </label>
           </div>
         </div>
@@ -141,12 +155,19 @@
                 :checked="userSelectedBanks.includes(bank)"
                 class="hidden peer"
               />
-              <label :for="bank.bank" class="block p-3 border rounded-lg cursor-pointer transition-colors peer-checked:border-green-500 peer-checked:bg-green-50 hover:bg-gray-50">
-                <div class="font-medium">{{ bank.bankName }}</div>
-              </label>
+              <label :for="bank.bank" class="block p-3 border rounded-lg cursor-pointer transition-colors peer-checked:border-blue-500 peer-checked:bg-blue-50 hover:bg-gray-50">
+              <div class="font-medium">{{ bank.bankName || bank.bank }}</div>
+              <div v-if="showBankResponsibleInfo && bank.lastEditPerson" class="text-xs text-gray-500 mt-1">
+                ({{ bank.lastEditPerson }} - {{ bank.lastEditTime }})
+              </div>
+            </label>
             </div>
           </div>
         </div>
+      </div>
+      <div class="items-center mb-4 text-center">
+        <input type="checkbox" id="showBankInfo" v-model="showBankResponsibleInfo" class="mr-2">
+        <label for="showBankInfo" class="text-sm text-gray-600">显示题库负责信息</label>
       </div>
       <button @click="prevStep" class="btn">上一步</button>
       <button @click="nextStep" class="btn">下一步</button>
@@ -330,6 +351,11 @@
           <img v-if="qqAvatarUrl" :src="qqAvatarUrl" alt="QQ Avatar" class="qq-avatar" />
         </div>
         <p class="score-label">客观题部分分数</p>
+        <!-- 结果提示文本 -->
+        <p class="result-text">感谢你的参与，{{surveyData.gradeNum}} 级 {{classNum}} 班的 {{ userName }} 同学，请妥善保管好您的结果数据，显示为大量口字旁的汉字即为正确格式(笑)，任何修改都会导致无法读取，及时提交给负责人哦~</p>
+        <!-- 加密数据输出框 -->
+        <textarea class="encrypted-output" v-model="encryptedData" readonly></textarea>
+        <!-- 操作按钮 (复制、下载、了解社团) -->
         <!-- 查看错题按钮 -->
         <button @click="toggleWrongQuestions" class="btn">查看错题</button>
         <!-- 错题列表 (过渡动画) -->
@@ -342,15 +368,10 @@
           </div>
           </div>
         </Transition>
-        <!-- 结果提示文本 -->
-        <p class="result-text">感谢你的参与，{{gradeNum}} 级 {{classNum}} 班的 {{ userName }} 同学，请妥善保管好您的结果数据，显示为大量口字旁的汉字即为正确格式(笑)，任何修改都会导致无法读取，及时提交给负责人哦~</p>
-        <!-- 加密数据输出框 -->
-        <textarea class="encrypted-output" v-model="encryptedData" readonly></textarea>
-        <!-- 操作按钮 (复制、下载、了解社团) -->
         <div class="button-row">
           <button @click="copyToClipboard" class="btn">复制</button>
           <button @click="downloadFile" class="btn">下载</button>
-          <button v-if="showLearnMoreButton" @click="learnMore" class="btn">了解社团</button>
+          <button v-if="showLearnMoreButton" @click="learnMore" class="btn">返回</button>
         </div>
       </div>
     </div>
@@ -373,6 +394,7 @@ const objectiveQuestions = ref<any[]>([])
 const subjectiveQuestions = ref<any[]>([])
 const selectedBanks = ref<any[]>([])
 const userSelectedBanks = ref<any[]>([]) // 新增：用户手动选择的题库
+const showBankResponsibleInfo = ref(false); // 控制是否显示题库负责人信息
 
 const departmentChoiceBanks = computed(() => {
   return bankMeta.value.meta.filter(meta => 
@@ -456,7 +478,7 @@ const triggerExpand = inject("triggerExpand") as () => void
 const scrollToTop = inject("scrollToTop") as () => void
 
 const userName = ref("")
-const gradeNum = ref("2025")
+const gradeNum = ref("")
 const classNum = ref("")
 const gender = ref("男")
 const currentStep = ref(1)
@@ -633,6 +655,8 @@ const handleBeforeUnload = (event: BeforeUnloadEvent) => {
   }
 }
 
+
+
 const nextStep = async () => {
   triggerAnimation(async () => {
     if (currentStep.value === 1) {
@@ -648,8 +672,14 @@ const nextStep = async () => {
       }
 
       const classNumValue = parseInt(classNum.value);
-      if (isNaN(classNumValue) || classNumValue < 1 || classNumValue > 25) {
-        displayInfo("2025级只有25个班哦~请填写01-25之间的数字哦~(・_・)");
+      const gradeNumValue = parseInt(gradeNum.value);
+      if (isNaN(gradeNumValue) || gradeNumValue < 0 || gradeNumValue > 25) {
+        displayInfo("年级请填写正确的数字哦~(・_・)");
+        return;
+      }
+      
+      if (isNaN(classNumValue) || classNumValue < 1 || classNumValue > 99) {
+        displayInfo("班级号请填写正确的数字哦~(・_・)");
         return;
       }
 
@@ -665,7 +695,7 @@ const nextStep = async () => {
       }
 
       surveyData.value.name = userName.value
-      surveyData.value.gradeNum = gradeNum.value
+      surveyData.value.gradeNum = gradeNum.value.length === 2 ? '20' + gradeNum.value : gradeNum.value
       surveyData.value.classNum = parseInt(classNum.value, 10).toString().padStart(2, "0")
       surveyData.value.gender = gender.value
       surveyData.value.qqNumber = qqNumber.value
@@ -763,8 +793,6 @@ const nextStep = async () => {
         }
       });
 
-
-
       currentStep.value = 3
     } else if (currentStep.value === 3) {
       isLoading.value = true;
@@ -819,7 +847,7 @@ const nextStep = async () => {
       }
 
       surveyData.value.selectedBanks = selectedBankInfo;
-      currentStep.value = 4; // 进入客观题答题界面
+        currentStep.value = 4; // 进入客观题答题界面
     } finally {
       clearInterval(loadingInterval);
       isLoading.value = false;
@@ -907,7 +935,7 @@ const nextStep = async () => {
       });
       objectiveQuestionsScore.value = score;
       surveyData.value.objectiveQuestionsScore = score; // 将分数写入 surveyData
-      encryptedData.value = JSON.stringify(base64ToPhoneticSingle(aes256Encrypt(JSON.stringify(surveyData.value), encryptionKey.value)));
+      encryptedData.value = JSON.stringify(base64ToPhoneticSingle(aes256Encrypt(JSON.stringify(surveyData.value), encryptionKey.value))).replace(/"/g, '');
       currentStep.value = 8; // 直接进入结果展示界面
     } 
     triggerExpand();
@@ -1134,7 +1162,6 @@ onBeforeUnmount(() => {
   border: 1px solid #eee; /* 边框 */
   padding: 15px; /* 内边距 */
   border-radius: 8px; /* 边框圆角 */
-  background-color: #f9f9f9; /* 背景颜色 */
 }
 
 /* 错题项样式 */
@@ -1242,15 +1269,13 @@ input[type="text"] {
 .class-input-group input#gradeNum {
   width: 60px; /* 宽度 */
   text-align: center; /* 文本居中对齐 */
-  margin-right: 10px; /* 右外边距 */
 }
 
 
 /* 班级输入组班级输入框样式 */
 .class-input-group input#classNum {
-  width: 80px; /* 宽度 */
+  width: 60px; /* 宽度 */
   text-align: center; /* 文本居中对齐 */
-  margin-right: 10px; /* 右外边距 */
 }
 
 
@@ -1376,8 +1401,8 @@ input[type="text"] {
   overflow: hidden; /* 溢出隐藏 */
   text-overflow: ellipsis; /* 文本溢出显示省略号 */
   margin-bottom: 5px; /* 下外边距 */
-  color: #000; /* 字体颜色设置为黑色 */
-  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; /* 白色描边 */
+  color: #000; /* 纯黑 */
+  font-weight: bold;
 }
 
 /* 回顾问题文本样式 */
@@ -1396,7 +1421,8 @@ input[type="text"] {
   margin-bottom: 15px;
   color: #000; /* 字体颜色设置为黑色 */
   line-height: 1.6;
-  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; /* 白色描边 */
+  color: #000; /* 纯黑 */
+  font-weight: bold;
 }
 
 .options-container {
@@ -1414,7 +1440,6 @@ input[type="text"] {
   cursor: pointer;
   transition: all 0.3s ease;
   color: #000; /* 字体颜色设置为黑色 */
-  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; /* 白色描边 */
   font-size: 1em;
   text-align: center;
   display: flex;
@@ -1447,11 +1472,8 @@ textarea {
   font-size: 1em;
   resize: vertical;
   min-height: 100px;
-  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; /* 白色描边 */
 }
-.subjective-answer-textarea.no-placeholder-outline::placeholder {
-  text-shadow: none; /* 移除文本阴影 */
-}
+
 textarea::placeholder {
   color: #ccc;
 }

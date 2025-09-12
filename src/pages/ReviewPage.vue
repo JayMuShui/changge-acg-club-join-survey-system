@@ -54,23 +54,28 @@ const reviewAccount = ref('');
 const encryptionKey = ref('');
 
 onMounted(async () => {
-  try {
-    const [passwordResponse, keyResponse] = await Promise.all([
-      fetch('/_password/after-encrypt.json'),
-      fetch('/_password/key.json')
-    ]);
-    const passwordData = await passwordResponse.json();
-    const keyData = await keyResponse.json();
-    reviewPassword.value = passwordData.review_password;
-    reviewAccount.value = passwordData.review.account;
-    encryptionKey.value = keyData.key;
-  } catch (error) {
-    console.error('[加密核心错误-审阅页] 密钥数据加载失败', error);
-    displayInfo('[加密核心错误] 加载数据失败，请联系技术同学，否则无法正常使用系统！ヾ(≧へ≦)〃');
-  }
-});
+    try {
+      const [passwordResponse, keyResponse] = await Promise.all([
+        fetch('/_password/after-encrypt.json'),
+        fetch('/_password/key.json')
+      ]);
+      const passwordData = await passwordResponse.json();
+      const keyData = await keyResponse.json();
+      reviewPassword.value = passwordData.review.password;
+      reviewAccount.value = passwordData.review.account;
+      encryptionKey.value = keyData.key;
+      
+    } catch (error) {
+      console.error('[加密核心错误-审阅页] 密钥数据加载失败', error);
+      displayInfo('[加密核心错误] 加载数据失败，请联系技术同学，否则无法正常使用系统！ヾ(≧へ≦)〃');
+    }
+  });
 
 const confirmReview = () => {
+  if (!reviewPassword.value || !encryptionKey.value || !reviewAccount.value) {
+    displayInfo('系统数据加载中，请稍后再试！');
+    return;
+  }
   const storedBase64 = phoneticSingleToBase64(reviewPassword.value);
   const decryptedStoredText = aes256Decrypt(storedBase64, encryptionKey.value);
 

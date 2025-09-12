@@ -11,6 +11,8 @@
     "bank": "chinese-anime",
     "bankName": "国漫",
     "category": "anime",
+    "lastEditPerson": "刘佳宜",
+    "lastEditTime": "2025-9-12 22:00",
     "type": "objective",
     "path": "objective/anime/chinese-anime.json"
   },
@@ -18,6 +20,8 @@
     "bank": "japanese-daily-anime",
     "bankName": "日漫·日常",
     "category": "anime",
+    "lastEditPerson": "刘芳铭",
+    "lastEditTime": "2025-9-12 21:30",
     "type": "objective",
     "path": "objective/anime/japanese-daily-anime.json"
   },
@@ -25,6 +29,8 @@
     "bank": "japanese-inference-anime",
     "bankName": "日漫·推理 ",
     "category": "anime",
+    "lastEditPerson": "刘芳铭",
+    "lastEditTime": "2025-9-12 21:30",
     "type": "objective",
     "path": "objective/anime/japanese-inference-anime.json"
   },
@@ -32,6 +38,8 @@
     "bank": "japanese-love-anime",
     "bankName": "日漫·恋爱",
     "category": "anime",
+    "lastEditPerson": "刘芳铭",
+    "lastEditTime": "2025-9-12 21:30",
     "type": "objective",
     "path": "objective/anime/japanese-love-anime.json"
   },
@@ -39,6 +47,8 @@
     "bank": "japanese-realistic-anime",
     "bankName": "日漫·热血",
     "category": "anime",
+    "lastEditPerson": "刘芳铭",
+    "lastEditTime": "2025-9-12 21:30",
     "type": "objective",
     "path": "objective/anime/japanese-realistic-anime.json"
   },
@@ -46,6 +56,8 @@
     "bank": "korean-anime",
     "bankName": "韩漫",
     "category": "anime",
+    "lastEditPerson": "刘芳铭",
+    "lastEditTime": "2025-9-12 21:30",
     "type": "objective",
     "path": "objective/anime/korean-anime.json"
   },
@@ -53,6 +65,8 @@
     "bank": "us-anime",
     "bankName": "美漫",
     "category": "anime",
+    "lastEditPerson": "刘芳铭",
+    "lastEditTime": "2025-9-12 21:30",
     "type": "objective",
     "path": "objective/anime/us-anime.json"
   },
@@ -60,6 +74,8 @@
     "bank": "common-culture",
     "bankName": "通识文化",
     "category": "commom",
+    "lastEditPerson": "刘芳铭",
+    "lastEditTime": "2025-9-12 21:30",
     "type": "objective",
     "path": "objective/commom/common-culture.json",
     "required": true
@@ -68,6 +84,8 @@
     "bank": "common-slang",
     "bankName": "通识黑话",
     "category": "commom",
+    "lastEditPerson": "刘芳铭",
+    "lastEditTime": "2025-9-12 21:30",
     "type": "objective",
     "path": "objective/commom/common-slang.json",
     "required": true
@@ -76,6 +94,8 @@
     "bank": "cosplay-community",
     "bankName": "Cosplay",
     "category": "community",
+    "lastEditPerson": "刘芳铭",
+    "lastEditTime": "2025-9-12 21:30",
     "type": "objective",
     "path": "objective/community/cosplay-community.json"
   },
@@ -83,13 +103,17 @@
     "bank": "fanfiction-community",
     "bankName": "同人文圈",
     "category": "community",
-    "type": "objective",
+    "lastEditPerson": "刘芳铭",
+    "lastEditTime": "2025-9-12 21:30",
+    "type": "objective",  
     "path": "objective/community/fanfiction-community.json"
   },
   {
     "bank": "tokusatsu-community",
     "bankName": "日本特摄剧",
     "category": "community",
+    "lastEditPerson": "刘芳铭",
+    "lastEditTime": "2025-9-12 21:30",
     "type": "objective",
     "path": "objective/community/tokusatsu-community.json"
   },
@@ -97,6 +121,8 @@
     "bank": "galgame",
     "bankName": "Galgame",
     "category": "other-carrier",
+    "lastEditPerson": "刘芳铭",
+    "lastEditTime": "2025-9-12 21:30",
     "type": "objective",
     "path": "objective/other-carrier/galgame.json"
   },
@@ -104,6 +130,8 @@
     "bank": "light-novel",
     "bankName": "轻小说",
     "category": "other-carrier",
+    "lastEditPerson": "刘芳铭",
+    "lastEditTime": "2025-9-12 21:30",
     "type": "objective",
     "path": "objective/other-carrier/light-novel.json"
   },
@@ -111,6 +139,8 @@
     "bank": "arknights",
     "bankName": "明日方舟",
     "category": "game",
+    "lastEditPerson": "刘芳铭",
+    "lastEditTime": "2025-9-12 21:30",
     "type": "objective",
     "path": "objective/game/arknights.json"
   },
@@ -118,6 +148,8 @@
     "bank": "blue-archive",
     "bankName": "蔚蓝档案",
     "category": "game",
+    "lastEditPerson": "刘芳铭",
+    "lastEditTime": "2025-9-12 21:30",
     "type": "objective",
     "path": "objective/game/blue-archive.json"
   },
@@ -125,13 +157,17 @@
     "bank": "genshin-impact",
     "bankName": "原神",
     "category": "game",
+    "lastEditPerson": "刘芳铭",
+    "lastEditTime": "2025-9-12 21:30",
     "type": "objective",
     "path": "objective/game/genshin-impact.json"
   },
-    {
+  {
     "bank": "honkai-star-rail",
     "bankName": "崩坏：星穹铁道",
     "category": "game",
+    "lastEditPerson": "刘芳铭",
+    "lastEditTime": "2025-9-12 21:30",
     "type": "objective",
     "path": "objective/game/honkai-star-rail.json"
   },
@@ -139,6 +175,8 @@
     "bank": "zenless-zone-zero",
     "bankName": "绝区零",
     "category": "game",
+    "lastEditPerson": "刘芳铭",
+    "lastEditTime": "2025-9-12 21:30",
     "type": "objective",
     "path": "objective/game/zenless-zone-zero.json"
   },
@@ -146,6 +184,8 @@
     "bank": "common",
     "bankName": "通用主观题",
     "category": "common",
+    "lastEditPerson": "刘芳铭",
+    "lastEditTime": "2025-9-12 21:30",
     "type": "subjective",
     "path": "subjective/commom/common.json",
     "required": true
@@ -154,12 +194,16 @@
     "bank": "art-drawing-department",
     "bankName": "手绘部",
     "category": "department-choice",
+    "lastEditPerson": "梁莉",
+    "lastEditTime": "2025-9-12 21:30",
     "type": "subjective",
     "path": "subjective/department-choice/art-drawing-department.json"
   },
   {
     "bank": "design-editing-department",
     "bankName": "漫编部",
+    "lastEditPerson": "刘芳铭",
+    "lastEditTime": "2025-9-12 21:30",
     "category": "department-choice",
     "type": "subjective",
     "path": "subjective/department-choice/design-editing-department.json"
@@ -168,6 +212,8 @@
     "bank": "performance-department",
     "bankName": "才艺部",
     "category": "department-choice",
+    "lastEditPerson": "陈佳莹",
+    "lastEditTime": "2025-9-12 21:30",
     "type": "subjective",
     "path": "subjective/department-choice/performance-department.json"
   },
@@ -175,6 +221,8 @@
     "bank": "public-relations-department",
     "bankName": "外交部",
     "category": "department-choice",
+    "lastEditPerson": "梁耀天",
+    "lastEditTime": "2025-9-12 21:30",
     "type": "subjective",
     "path": "subjective/department-choice/public-relations-department.json"
   }

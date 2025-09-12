@@ -370,7 +370,8 @@ const processContent = () => {
     displayInfo('你木有上传内容，空白没法解密~(´。＿。｀)');
     return;
   }
-
+  // 过滤掉所有非汉字字符，以免识别出问题
+  const filteredText = pastedText.value.replace(/[^\u4e00-\u9fa5\s]/g, '');
   // 检查解密密钥是否加载完毕
   if (!decryptionKey.value) {
     displayInfo('解密密钥未加载完毕，请稍后再试！(っ °Д °;)っ');
@@ -381,7 +382,7 @@ const processContent = () => {
   triggerAnimation(() => {
     try {
       // 解密内容
-      const decrypted = aes256Decrypt(phoneticSingleToBase64(pastedText.value), decryptionKey.value);
+      const decrypted = aes256Decrypt(phoneticSingleToBase64(filteredText), decryptionKey.value);
       // 检查解密结果是否有效
       if (!decrypted) {
         displayInfo('密文格式错误或不完整！无法作为合法的数据解析..－O－');

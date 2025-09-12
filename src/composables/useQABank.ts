@@ -42,6 +42,8 @@ interface BankMeta {
   type: string;        // 题库的类型文件夹，例如 objective、subjective
   path: string;        // 题库文件的相对路径，用于数据获取
   required?: boolean;  // 可选字段，表示该题库是否为必选
+  lastEditPerson?: string; // 可选字段，最后编辑人
+  lastEditTime?: string;   // 可选字段，最后编辑时间
 }
 
 /**

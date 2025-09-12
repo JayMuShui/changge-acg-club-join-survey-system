@@ -109,6 +109,8 @@ src/                # 源代码目录
                     "bank": "<题库英文标识>",
                     "bankName": "<题库中文名称>",
                     "category": "<所属分类，如anime>",
+                    "lastEditPerson": "<最后编辑人>",
+                    "lastEditTime": "<最后编辑时间>",
                     "type": "<题目类型，如objective或subjective>",
                     "path": "<题库文件路径>"
                 }
@@ -151,9 +153,8 @@ src/                # 源代码目录
 - `answer`: 正确答案 (String)，必须是 `options` 中的一个。
 
 **客观题示例：**
-
+- public/question-bank/objective/anime/japanese-daily-anime.json
 ```json
-// public/question-bank/objective/anime/japanese-daily-anime.json
 {
     "bank": "japanese-daily-anime",
     "bank-name": "日漫·日常",
@@ -179,9 +180,8 @@ src/                # 源代码目录
 无
 
 **主观题示例：**
-
+- public/question-bank/subjective/commom/common.json
 ```json
-// public/question-bank/subjective/commom/common.json
 {
     "bank": "common",
     "bank-name": "通用主观题",
@@ -244,7 +244,7 @@ src/                # 源代码目录
 
 ## 在线使用
 
-[![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://changge.netlify.app/)[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://changge.vercel.app/)[![Cloudflare Pages](https://img.shields.io/badge/Cloudflare_Pages-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)](https://changge.pages.dev/)[![腾讯云EdgeOne](https://img.shields.io/badge/TencentCloud-EdgeOne-0052D9?style=for-the-badge&logo=tencent-cloud&logoColor=white)](https://changge.edgeone.app/)(EdgeOne平台未开启中国大陆IP访问)
+[![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://changge.netlify.app/) [![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://changge.vercel.app/) [![Cloudflare Pages](https://img.shields.io/badge/Cloudflare_Pages-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)](https://changge.pages.dev/) [![腾讯云EdgeOne](https://img.shields.io/badge/TencentCloud-EdgeOne-0052D9?style=for-the-badge&logo=tencent-cloud&logoColor=white)](https://changge.edgeone.app/)(EdgeOne平台未开启中国大陆IP访问)
 
 
 
