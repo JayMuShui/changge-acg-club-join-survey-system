@@ -1002,8 +1002,8 @@ const downloadFile = () => {
     displayInfo("请输入您的名字才能下载文件！(｡_｡)");
     return;
   }
-  // 构建文件名，格式为“用户名.qaq”
-  const filename = `${userName.value}.qaq`;
+  // 构建文件名，格式为“用户名.txt”
+  const filename = `${userName.value}.txt`;
   // 创建一个 Blob 对象，包含加密数据，类型为纯文本 ，此处同时移除双引号
   const blob = new Blob([encryptedData.value.replace(/"/g, '')], { type: "text/plain" });
   // 创建一个 URL，指向 Blob 对象

@@ -8,13 +8,13 @@
       <h2 class="text-xl font-bold mb-4">在此上传加密数据</h2>
       <!-- 文件上传区域 -->
       <div class="mb-6 p-4 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg">
-        <label for="file-upload" class="block text-green-800 text-sm font-bold mb-2">上传文件 (.txt, .qaq):</label>
+        <label for="file-upload" class="block text-green-800 text-sm font-bold mb-2">上传文件 (.txt):</label>
         <div class="relative">
           <input
                 type="file"
                 id="file-upload"
                 @change="handleFileUpload"
-                accept=".txt,.qaq"
+                accept=".txt"
                 class="hidden"
               />
               <!-- 文件拖拽上传区域 -->
