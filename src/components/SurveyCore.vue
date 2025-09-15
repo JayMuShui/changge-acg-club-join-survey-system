@@ -129,7 +129,7 @@
               class="hidden peer"
               :checked="userSelectedBanks.some(b => b.bank === bank.bank && b.choice === 'adjustment')"
             />
-            <label :for="'adj-' + bank.bank" class="block p-3 border rounded-lg cursor-pointer transition-colors peer-checked:border-blue-500 peer-checked:bg-blue-50 hover:bg-gray-50">
+            <label :for="'adjustment-' + bank.bank" class="block p-3 border rounded-lg cursor-pointer transition-colors peer-checked:border-blue-500 peer-checked:bg-blue-50 hover:bg-gray-50">
               <div class="font-medium">{{ bank.bankName || bank.bank }}</div>
               <div v-if="showBankResponsibleInfo && bank.lastEditPerson" class="text-xs text-gray-500 mt-1">
                 ({{ bank.lastEditPerson }} - {{ bank.lastEditTime }})

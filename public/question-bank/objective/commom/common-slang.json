@@ -63,18 +63,6 @@
             "answer": "粉丝基于原作创作的非官方作品"
         },
         {
-            "id": 6,
-            "type": "objective",
-            "question": "客妹是什么意思",
-            "options": [
-                "购买周边的女性顾客",
-                "动漫中的女性角色",
-                "从事 cosplay 的女性",
-                "同人创作的女性作者"
-            ],
-            "answer": "购买周边的女性顾客"
-        },
-        {
             "id": 7,
             "type": "objective",
             "question": "你推是什么意思",

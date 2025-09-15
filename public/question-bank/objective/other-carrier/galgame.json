@@ -387,18 +387,6 @@
             "answer": "学习服装设计"
         },
         {
-            "id": 33,
-            "type": "objective",
-            "question": "以下哪部作品的女主角之一是“金发双马尾”？",
-            "options": [
-                "《Air》中的神尾观铃",
-                "《Kanon》中的月宫亚由",
-                "《Little Busters!》中的枣铃",
-                "《Fate/stay night》中的远坂凛"
-            ],
-            "answer": "《Fate/stay night》中的远坂凛"
-        },
-        {
             "id": 34,
             "type": "objective",
             "question": "《寒蝉鸣泣之时》中，“雏见泽症候群”的主要症状是？",

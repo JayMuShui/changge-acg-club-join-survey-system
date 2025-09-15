@@ -20,8 +20,8 @@
     "bank": "japanese-daily-anime",
     "bankName": "日漫·日常",
     "category": "anime",
-    "lastEditPerson": "刘芳铭",
-    "lastEditTime": "2025-9-12 21:30",
+    "lastEditPerson": "刘霖",
+    "lastEditTime": "2025-9-15 14:30",
     "type": "objective",
     "path": "objective/anime/japanese-daily-anime.json"
   },
@@ -74,8 +74,8 @@
     "bank": "common-culture",
     "bankName": "通识文化",
     "category": "commom",
-    "lastEditPerson": "刘芳铭",
-    "lastEditTime": "2025-9-12 21:30",
+    "lastEditPerson": "刘霖",
+    "lastEditTime": "2025-9-15 14:30",
     "type": "objective",
     "path": "objective/commom/common-culture.json",
     "required": true
@@ -84,8 +84,8 @@
     "bank": "common-slang",
     "bankName": "通识黑话",
     "category": "commom",
-    "lastEditPerson": "刘芳铭",
-    "lastEditTime": "2025-9-12 21:30",
+    "lastEditPerson": "刘霖",
+    "lastEditTime": "2025-9-15 14:30",
     "type": "objective",
     "path": "objective/commom/common-slang.json",
     "required": true
@@ -109,20 +109,11 @@
     "path": "objective/community/fanfiction-community.json"
   },
   {
-    "bank": "tokusatsu-community",
-    "bankName": "日本特摄剧",
-    "category": "community",
-    "lastEditPerson": "刘芳铭",
-    "lastEditTime": "2025-9-12 21:30",
-    "type": "objective",
-    "path": "objective/community/tokusatsu-community.json"
-  },
-  {
     "bank": "galgame",
     "bankName": "Galgame",
     "category": "other-carrier",
-    "lastEditPerson": "刘芳铭",
-    "lastEditTime": "2025-9-12 21:30",
+    "lastEditPerson": "刘霖",
+    "lastEditTime": "2025-9-15 14:30",
     "type": "objective",
     "path": "objective/other-carrier/galgame.json"
   },
@@ -140,7 +131,7 @@
     "bankName": "明日方舟",
     "category": "game",
     "lastEditPerson": "刘芳铭",
-    "lastEditTime": "2025-9-12 21:30",
+    "lastEditTime": "2025-9-15 14:30",
     "type": "objective",
     "path": "objective/game/arknights.json"
   },
@@ -148,8 +139,8 @@
     "bank": "blue-archive",
     "bankName": "蔚蓝档案",
     "category": "game",
-    "lastEditPerson": "刘芳铭",
-    "lastEditTime": "2025-9-12 21:30",
+    "lastEditPerson": "刘霖",
+    "lastEditTime": "2025-9-15 14:30",
     "type": "objective",
     "path": "objective/game/blue-archive.json"
   },
@@ -167,18 +158,9 @@
     "bankName": "崩坏：星穹铁道",
     "category": "game",
     "lastEditPerson": "刘芳铭",
-    "lastEditTime": "2025-9-12 21:30",
+    "lastEditTime": "2025-9-15 14:30",
     "type": "objective",
     "path": "objective/game/honkai-star-rail.json"
-  },
-  {
-    "bank": "zenless-zone-zero",
-    "bankName": "绝区零",
-    "category": "game",
-    "lastEditPerson": "刘芳铭",
-    "lastEditTime": "2025-9-12 21:30",
-    "type": "objective",
-    "path": "objective/game/zenless-zone-zero.json"
   },
   {
     "bank": "common",
