@@ -9,7 +9,7 @@
     <!-- 输入密码或规则占位 -->
     <div v-else>
       <!-- 占位文本直接在模板维护 -->
-<div v-if="!showInput" class="mb-4 text-green-600">当前注册:长歌动漫社2026届成员招新问卷 <strong>(试行 | 2025-09-15 15:03:34)</strong></div>
+<div v-if="!showInput" class="mb-4 text-green-600">当前注册:长歌动漫社2026届成员招新问卷 <strong>(试行 | 2025-09-17 00:52:06)</strong></div>
 <div v-if="!showInput" class="mb-4 text-left">请仔细阅读以下规则后再点击开始填写，若对社团需要更多的了解和部门考虑请点击了解更多：</div>
 <div v-if="!showInput" class="mb-4 text-left">
   <ol class="list-decimal pl-5">
@@ -128,7 +128,7 @@ const confirmSurvey = () => {
       enteredSurvey.value = true;
       showInput.value = false;
     } else {
-      displayInfo('密码错误，请重试！(・_・)');
+      displayInfo('邀请码错误，请重试！(・_・)');
     }
     triggerExpand();
   });

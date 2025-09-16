@@ -530,12 +530,59 @@ const allObjectiveAnswered = computed(() =>
     )
   )
 );
+
+// 使用 computed 确保每次访问都返回独立对象，以当前显示的题目获取其bank+id作为索引正确写入subjectiveAnswers
 const currentSubjectiveAnswer = computed({
+  // get 方法：当我们需要“看”当前主观题的答案时，这个方法就会被调用
   get: () => {
+    // subjectiveAnswers.value 是一个大列表，里面存着所有主观题的答案
+    // currentSubjectiveQuestionIndex.value 是当前正在看的主观题在列表里的位置（索引）
+    // 比如，如果我们在看第3道主观题，那么这个索引就是2（因为计算机从0开始数）
+    // 这行代码的意思是：去大列表里，找到当前题目位置的答案。
+    // 如果找到了，就返回那个答案。
+    // 如果没找到（比如这道题还没答过），就返回一个空的答案模板 { id: 0, bank: '', text: '' }，
+    // 这样界面就不会报错，知道这是一个还没填写的答案。
     return subjectiveAnswers.value[currentSubjectiveQuestionIndex.value] || { id: 0, bank: '', text: '' };
   },
+
+  // set 方法：当我们在输入框里“写”答案，或者答案发生变化时，这个方法就会被调用
   set: (val) => {
-    subjectiveAnswers.value[currentSubjectiveQuestionIndex.value] = val;
+    // val 就是我们刚刚输入或者修改的答案内容（它是一个对象，里面有 text 属性，就是答案文字）
+
+    // 1. 找到当前正在回答的题目信息
+    // currentSubjectiveQuestionIndex.value 还是当前题目在题目列表里的位置
+    // subjectiveQuestions.value 是所有主观题的题目列表
+    // 这行代码就是根据位置，找到当前正在回答的这道题目的详细信息（比如它的 id 和 bank）
+    const currentQuestion = subjectiveQuestions.value[currentSubjectiveQuestionIndex.value];
+
+    // 如果因为某些原因，当前题目信息没找到，那就不做任何操作，直接退出
+    if (!currentQuestion) return;
+
+    // 2. 检查这个答案是不是已经存在了
+    // subjectiveAnswers.value.findIndex() 是一个查找功能
+    // 它会遍历我们所有已保存的答案 (ans)，看看有没有哪个答案的 id 和 bank
+    // 和我们当前正在回答的题目的 id 和 bank 完全一样。
+    // 记住，我们之前说过，主观题的答案是根据 bank 和 id 精准存储的，就是在这里体现的！
+    const existingAnswerIndex = subjectiveAnswers.value.findIndex(
+      (ans) => ans.id === currentQuestion.id && ans.bank === currentQuestion.bank
+    );
+
+    // 3. 根据查找结果，决定是更新旧答案还是添加新答案
+    // existingAnswerIndex !== -1 表示我们找到了一个已经存在的答案
+    if (existingAnswerIndex !== -1) {
+      // 如果找到了旧答案，那么就更新这个旧答案的文字内容 (text)
+      subjectiveAnswers.value[existingAnswerIndex].text = val.text;
+    } else {
+      // 如果没找到旧答案（说明这道题是第一次作答），那么就添加一个新答案
+      subjectiveAnswers.value.push({
+        // 新答案里要包含题目的 id
+        id: currentQuestion.id,
+        // 新答案里要包含题目的 bank
+        bank: currentQuestion.bank,
+        // 新答案里还要包含我们刚刚输入的文字内容
+        text: val.text,
+      });
+    }
   }
 });
 
@@ -575,16 +622,36 @@ const wrongQuestions = computed(() => {
 
 
 const selectObjectiveOption = (option: string) => {
+  // 获取当前正在回答的客观题目的详细信息。
+  // objectiveQuestions.value 是所有客观题的题目列表。
+  // currentObjectiveQuestionIndex.value 是当前正在看的客观题在列表里的位置（索引）。
   const currentQuestion = objectiveQuestions.value[currentObjectiveQuestionIndex.value];
+
+  // 查找当前题目是否已经有答案。
+  // objectiveAnswers.value 是一个存储所有客观题答案的数组。
+  // findIndex 方法会遍历这个数组，查找是否存在一个答案 (ans)，它的 id 和 bank 都与当前题目的 id 和 bank 匹配。
+  // 如果找到，answerIndex 会是该答案在数组中的索引；如果没找到，则为 -1。
   const answerIndex = objectiveAnswers.value.findIndex(ans => ans.id === currentQuestion.id && ans.bank === currentQuestion.bank);
+
+  // 如果 answerIndex 不等于 -1，说明找到了已存在的答案
   if (answerIndex !== -1) {
+    // 更新已存在的答案：
+    // 将该答案的 selectedOption（用户选择的选项）更新为当前用户选择的 option。
     objectiveAnswers.value[answerIndex].selectedOption = option;
+    // 判断用户选择的选项是否正确，并更新 correct 属性。
+    // 这里直接与当前题目的正确答案 (currentQuestion.answer) 进行比较。
     objectiveAnswers.value[answerIndex].correct = option === currentQuestion.answer;
   } else {
+    // 如果 answerIndex 等于 -1，说明是第一次回答这道题，需要添加新答案
     objectiveAnswers.value.push({
+      // 新答案里要包含题目的 id
       id: currentQuestion.id,
+      // 新答案里要包含题目的 bank
       bank: currentQuestion.bank,
+      // 新答案里还要包含用户选择的选项
       selectedOption: option,
+      // 判断用户选择的选项是否正确，并设置 correct 属性。
+      // 这里直接与当前题目的正确答案 (currentQuestion.answer) 进行比较。
       correct: option === currentQuestion.answer,
     });
   }
@@ -844,6 +911,7 @@ const nextStep = async () => {
       for (let i = subjectiveQuestions.value.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [subjectiveQuestions.value[i], subjectiveQuestions.value[j]] = [subjectiveQuestions.value[j], subjectiveQuestions.value[i]];
+        [subjectiveAnswers.value[i], subjectiveAnswers.value[j]] = [subjectiveAnswers.value[j], subjectiveAnswers.value[i]];
       }
 
       surveyData.value.selectedBanks = selectedBankInfo;
