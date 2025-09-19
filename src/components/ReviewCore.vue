@@ -33,11 +33,11 @@
       </div>
       <!-- 文本粘贴区域 -->
       <div class="mb-6 p-4 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg">
-        <label for="text-input" class="block text-black text-sm font-bold mb-2">或直接粘贴文本:</label>
+        <label for="text-input" class="block text-black text-sm font-bold mb-2">文本预览:</label>
         <textarea
           id="text-input"
           v-model="pastedText"
-          placeholder="请在此处粘贴审核内容..."
+          placeholder="加密内容预览区..."
           rows="10"
           class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors duration-300 resize-y"
         ></textarea>

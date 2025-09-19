@@ -21,7 +21,7 @@
     "bankName": "日漫·日常",
     "category": "anime",
     "lastEditPerson": "刘霖",
-    "lastEditTime": "2025-9-15 14:30",
+    "lastEditTime": "2025-9-19 13:30",
     "type": "objective",
     "path": "objective/anime/japanese-daily-anime.json"
   },
@@ -47,8 +47,8 @@
     "bank": "japanese-realistic-anime",
     "bankName": "日漫·热血",
     "category": "anime",
-    "lastEditPerson": "刘芳铭",
-    "lastEditTime": "2025-9-12 21:30",
+    "lastEditPerson": "刘霖",
+    "lastEditTime": "2025-9-19 13:30",
     "type": "objective",
     "path": "objective/anime/japanese-realistic-anime.json"
   },
@@ -94,8 +94,8 @@
     "bank": "cosplay-community",
     "bankName": "Cosplay",
     "category": "community",
-    "lastEditPerson": "刘芳铭",
-    "lastEditTime": "2025-9-12 21:30",
+    "lastEditPerson": "刘霖",
+    "lastEditTime": "2025-9-19 13:30",
     "type": "objective",
     "path": "objective/community/cosplay-community.json"
   },
@@ -113,7 +113,7 @@
     "bankName": "Galgame",
     "category": "other-carrier",
     "lastEditPerson": "刘霖",
-    "lastEditTime": "2025-9-15 14:30",
+    "lastEditTime": "2025-9-19 13:30",
     "type": "objective",
     "path": "objective/other-carrier/galgame.json"
   },
@@ -121,8 +121,8 @@
     "bank": "light-novel",
     "bankName": "轻小说",
     "category": "other-carrier",
-    "lastEditPerson": "刘芳铭",
-    "lastEditTime": "2025-9-12 21:30",
+    "lastEditPerson": "刘霖",
+    "lastEditTime": "2025-9-19 13:30",
     "type": "objective",
     "path": "objective/other-carrier/light-novel.json"
   },

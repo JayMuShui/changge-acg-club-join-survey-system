@@ -291,18 +291,6 @@
             "answer": "服装、妆容、道具与原作的相似度"
         },
         {
-            "id": 25,
-            "type": "objective",
-            "question": "以下哪项是cos圈中常见的“黑话”？",
-            "options": [
-                "你好，请问厕所在哪里？",
-                "这个角色的cn是什么？",
-                "今天天气真好",
-                "麻烦借过一下"
-            ],
-            "answer": "这个角色的cn是什么？"
-        },
-        {
             "id": 26,
             "type": "objective",
             "question": "“cn”在cos圈中是指？",

@@ -369,7 +369,7 @@
           </div>
         </Transition>
         <div class="button-row">
-          <button @click="copyToClipboard" class="btn">复制</button>
+
           <button @click="downloadFile" class="btn">下载</button>
           <button v-if="showLearnMoreButton" @click="learnMore" class="btn">返回</button>
         </div>
@@ -1046,22 +1046,6 @@ const prevStep = () => {
   });
 };
 
-// copyToClipboard 函数：将加密数据复制到剪贴板
-const copyToClipboard = async () => {
-  try {
-    // 尝试将加密后的数据写入用户的剪贴板
-    await navigator.clipboard.writeText(encryptedData.value);
-    // 复制成功后，向用户显示提示信息
-    displayInfo("剪贴板已经被我塞入加密数据啦！粘贴到收集的地方哦~(・ｖ・)");
-    // 显示“了解更多”按钮
-    showLearnMoreButton.value = true;
-  } catch (err) {
-    // 如果复制失败（例如，由于浏览器安全限制），则捕获错误并打印到控制台
-    console.error("[浏览器限制]复制失败:", err);
-    // 向用户显示复制失败的提示信息
-    displayInfo("复制失败了，可能是浏览器限制，请手动复制一下。（＞人＜；）");
-  }
-};
 
 // downloadFile 函数：将加密数据下载为文件
 const downloadFile = () => {

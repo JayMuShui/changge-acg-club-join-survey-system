@@ -39,18 +39,6 @@
             "answer": "亚瑟王"
         },
         {
-            "id": 4,
-            "type": "objective",
-            "question": "以下哪部作品的结局因“著名场景”被玩家调侃为“血池地狱”？",
-            "options": [
-                "《EF - the first tale》",
-                "《School Days》",
-                "《Rewrite》",
-                "《白色相簿2》"
-            ],
-            "answer": "《School Days》"
-        },
-        {
             "id": 5,
             "type": "objective",
             "question": "柚子社的作品通常以什么风格著称？",

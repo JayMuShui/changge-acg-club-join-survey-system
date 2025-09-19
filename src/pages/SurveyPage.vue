@@ -9,7 +9,7 @@
     <!-- 输入密码或规则占位 -->
     <div v-else>
       <!-- 占位文本直接在模板维护 -->
-<div v-if="!showInput" class="mb-4 text-green-600">当前注册:长歌动漫社2026届成员招新问卷 <strong>(试行 | 2025-09-17 00:52:06)</strong></div>
+<div v-if="!showInput" class="mb-4 text-green-600">当前注册:长歌动漫社2026届成员招新问卷 <strong>(试行 | 2025-09-19 14:34:08)</strong></div>
 <div v-if="!showInput" class="mb-4 text-left">请仔细阅读以下规则后再点击开始填写，若对社团需要更多的了解和部门考虑请点击了解更多：</div>
 <div v-if="!showInput" class="mb-4 text-left">
   <ol class="list-decimal pl-5">
@@ -22,7 +22,7 @@
     <li class="text-yellow-800">本问卷系统于今年起启用，本次试行题库由多人临时制作，难度未完全平衡，建议谨慎选择过多题库，以免影响评分。</li>
     <li>若接受部门调剂，请勾选<span class="text-green-700">调剂部门选择</span>的至少一项，系统将按权重分配其他部门主观题。</li>
     <li>主观题无标准答案，期待你的独特思考！</li>
-    <li>因社团经费限制，问卷数据无服务器存储。确认提交后，将生成结果的加密数据为<span class="text-blue-700">你的名字.txt</span>文件下载或直接复制数据。麻烦你妥善保存，请勿修改<span class="text-red-700">（任何改动将导致数据不可读）</span>，并提交至指定负责人。</li>
+    <li>因社团经费限制，问卷数据无服务器存储。确认提交后，将生成结果的加密数据为<span class="text-blue-700">你的名字.txt</span>文件下载。妥善保存，请勿修改<span class="text-red-700">（任何改动将导致数据不可读）</span>，并提交至指定负责人或指定处。</li>
   </ol>
 </div>
       <!-- 密码输入框 -->
